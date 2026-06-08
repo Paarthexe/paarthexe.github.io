@@ -1,0 +1,380 @@
+.terminal-app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.crt-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.crt-scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  pointer-events: none;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg,
+      rgba(255, 0, 0, 0.06),
+      rgba(0, 255, 0, 0.02),
+      rgba(0, 0, 255, 0.06));
+  background-size: 100% 4px, 6px 100%;
+}
+
+.crt-flicker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 12;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+  background-color: rgba(18, 16, 16, 0.02);
+  opacity: 0.8;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.15;
+  }
+
+  50% {
+    opacity: 0.25;
+  }
+
+  100% {
+    opacity: 0.15;
+  }
+}
+
+.terminal-glow {
+  text-shadow: 0 0 4px var(--glow-color);
+}
+
+.terminal-viewport {
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 30px;
+  scroll-behavior: smooth;
+  z-index: 2;
+}
+
+.terminal-viewport::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-viewport::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.terminal-viewport::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.terminal-viewport::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+.output-group {
+  margin-bottom: 16px;
+  animation: fadeIn 0.1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.prompt-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.prompt-user {
+  color: var(--success-color);
+  font-weight: bold;
+}
+
+.prompt-host {
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.prompt-dir {
+  color: var(--info-color);
+}
+
+.prompt-symbol {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.prompt-command-text {
+  color: var(--text-color);
+}
+
+.command-result {
+  padding-left: 12px;
+  margin-top: 4px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.terminal-input-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.terminal-hidden-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  left: -9999px;
+}
+
+.terminal-visible-input {
+  display: inline-block;
+  color: var(--text-color);
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  flex-grow: 1;
+  caret-color: transparent;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background-color: var(--cursor-color);
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+  margin-left: 2px;
+  box-shadow: 0 0 8px var(--cursor-color);
+}
+
+@keyframes blink {
+
+  from,
+  to {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  50% {
+    background-color: var(--cursor-color);
+    box-shadow: 0 0 8px var(--cursor-color);
+  }
+}
+
+.ascii-art {
+  font-family: monospace;
+  white-space: pre;
+  line-height: 1.1;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+
+.neofetch-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin: 12px 0;
+}
+
+.neofetch-art {
+  flex-shrink: 0;
+}
+
+.neofetch-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.neofetch-line {
+  margin-bottom: 4px;
+}
+
+.neofetch-label {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.skill-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 6px;
+  max-width: 500px;
+}
+
+.skill-name {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.skill-progress-wrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-progress-bar {
+  color: var(--success-color);
+  font-family: monospace;
+}
+
+.skill-percentage {
+  color: var(--info-color);
+  width: 45px;
+  text-align: right;
+}
+
+.project-card {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 12px;
+  max-width: 650px;
+  background-color: rgba(255, 255, 255, 0.02);
+  transition: all 0.2s ease;
+}
+
+.project-card:hover {
+  border-color: var(--primary-color);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.project-title {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.project-desc {
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.project-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.project-tag {
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  background-color: var(--border-color);
+  color: var(--text-color);
+  border-radius: 3px;
+}
+
+.project-links a {
+  color: var(--info-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+  color: var(--success-color);
+}
+
+.autocomplete-suggestion {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.mobile-shortcut-bar {
+  display: none;
+  margin-top: 12px;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  z-index: 3;
+}
+
+@media (max-width: 768px) {
+  .terminal-app {
+    padding: 12px;
+  }
+
+  .mobile-shortcut-bar {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .skill-bar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .skill-name {
+    width: auto;
+  }
+}
+
+.shortcut-btn {
+  background-color: var(--border-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.shortcut-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
