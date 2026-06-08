@@ -49,25 +49,25 @@ export const portfolioData = {
       id: "dacsaab",
       title: "DacSaab Health Assistant",
       description: "Offline multimodal healthcare assistant combining quantized LLMs, clinical triage models, and medical image analysis for low-resource environments with sub-2s edge inference.",
+      detailedDescription: "A fully offline multimodal healthcare intelligence system designed to work on low-spec edge devices in remote or low-connectivity environments. Built using ONNX Runtime for edge inference, it combines a highly quantized Llama-3-8B model for text diagnostics with custom PyTorch CNNs for medical image triage (chest X-ray analysis, skin lesion classification). The system achieves sub-2-second inference on standard mobile CPUs via extensive quantization, caching, and custom C++ execution loops.",
       tags: ["LLMs", "Edge AI", "Flutter", "PyTorch", "ONNX Runtime"],
-      code: "https://github.com",
-      live: "https://example.com"
+      code: "https://github.com/Paarthexe/dacsaab-health-assistant"
     },
     {
       id: "ai-interview",
       title: "AI Interview Coach",
       description: "Real-time mock interview platform powered by a fine-tuned Mistral 7B model, delivering adaptive conversations, speech analysis, and actionable interview feedback.",
+      detailedDescription: "A comprehensive web application designed to help candidates practice coding and behavioral interviews in real-time. Powered by a fine-tuned Mistral 7B model using QLoRA to align with expert interview protocols. Includes real-time speech-to-text feedback powered by Faster-Whisper, and provides actionable, structured post-interview evaluations on technical accuracy, articulation, and pacing.",
       tags: ["Mistral 7B", "QLoRA", "Faster-Whisper", "Flask", "Speech AI"],
-      code: "https://github.com",
-      live: "https://example.com"
+      code: "https://github.com/Paarthexe/ai-interview-coach"
     },
     {
       id: "terrainseg",
       title: "TerrainSeg Pipeline",
       description: "Cross-domain off-road semantic segmentation system using SegFormer architectures for robust obstacle-aware scene understanding across diverse terrains and lighting conditions.",
+      detailedDescription: "An autonomous off-road navigation perception pipeline focusing on real-time semantic segmentation in rugged, unstructured terrains. Utilizes SegFormer MiT architectures optimized with TensorRT, achieving 45+ FPS edge performance. Features domain adaptation modules that minimize performance drops when transferring segmentation accuracy across diverse lighting, weather, and environmental conditions.",
       tags: ["Computer Vision", "SegFormer", "PyTorch", "Semantic Segmentation"],
-      code: "https://github.com",
-      live: "https://example.com"
+      code: "https://github.com/Paarthexe/terrainseg-pipeline"
     },
   ],
 
@@ -106,15 +106,14 @@ const ProjectsList: React.FC<{ args: string[] }> = ({ args }) => {
       <div style={{ marginTop: '8px' }} className="project-detail">
         <div className="project-title terminal-glow">{proj.title}</div>
         <div style={{ marginBottom: '8px' }}>ID: {proj.id}</div>
-        <p className="project-desc" style={{ maxWidth: '600px', marginBottom: '12px' }}>{proj.description}</p>
+        <p className="project-desc" style={{ maxWidth: '600px', marginBottom: '12px' }}>{proj.detailedDescription}</p>
         <div className="project-tags" style={{ marginBottom: '12px' }}>
           {proj.tags.map((tag, i) => (
             <span key={i} className="project-tag">{tag}</span>
           ))}
         </div>
         <div className="project-links" style={{ display: 'flex', gap: '16px' }}>
-          <a href={proj.code} target="_blank" rel="noopener noreferrer">[GitHub Repository]</a>
-          <a href={proj.live} target="_blank" rel="noopener noreferrer">[Live Demo]</a>
+          <a href={proj.code} target="_blank" rel="noopener noreferrer">[GitHub Code]</a>
         </div>
       </div>
     );
