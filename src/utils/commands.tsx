@@ -51,7 +51,7 @@ export const portfolioData = {
       description: "Offline multimodal healthcare assistant combining quantized LLMs, clinical triage models, and medical image analysis for low-resource environments with sub-2s edge inference.",
       detailedDescription: "A fully offline multimodal healthcare intelligence system designed to work on low-spec edge devices in remote or low-connectivity environments. Built using ONNX Runtime for edge inference, it combines a highly quantized Llama-3-8B model for text diagnostics with custom PyTorch CNNs for medical image triage (chest X-ray analysis, skin lesion classification). The system achieves sub-2-second inference on standard mobile CPUs via extensive quantization, caching, and custom C++ execution loops.",
       tags: ["LLMs", "Edge AI", "Flutter", "PyTorch", "ONNX Runtime"],
-      code: "https://github.com/Paarthexe/dacsaab-health-assistant"
+      code: "https://github.com/TECHSCHOLAR777/DacSaab/"
     },
     {
       id: "ai-interview",
@@ -59,7 +59,7 @@ export const portfolioData = {
       description: "Real-time mock interview platform powered by a fine-tuned Mistral 7B model, delivering adaptive conversations, speech analysis, and actionable interview feedback.",
       detailedDescription: "A comprehensive web application designed to help candidates practice coding and behavioral interviews in real-time. Powered by a fine-tuned Mistral 7B model using QLoRA to align with expert interview protocols. Includes real-time speech-to-text feedback powered by Faster-Whisper, and provides actionable, structured post-interview evaluations on technical accuracy, articulation, and pacing.",
       tags: ["Mistral 7B", "QLoRA", "Faster-Whisper", "Flask", "Speech AI"],
-      code: "https://github.com/Paarthexe/ai-interview-coach"
+      code: "https://github.com/Aksh2906/ai-interview/"
     },
     {
       id: "terrainseg",
@@ -67,7 +67,7 @@ export const portfolioData = {
       description: "Cross-domain off-road semantic segmentation system using SegFormer architectures for robust obstacle-aware scene understanding across diverse terrains and lighting conditions.",
       detailedDescription: "An autonomous off-road navigation perception pipeline focusing on real-time semantic segmentation in rugged, unstructured terrains. Utilizes SegFormer MiT architectures optimized with TensorRT, achieving 45+ FPS edge performance. Features domain adaptation modules that minimize performance drops when transferring segmentation accuracy across diverse lighting, weather, and environmental conditions.",
       tags: ["Computer Vision", "SegFormer", "PyTorch", "Semantic Segmentation"],
-      code: "https://github.com/Paarthexe/terrainseg-pipeline"
+      code: "https://github.com/Paarthexe/multicityhackathonsegmentationtask"
     },
   ],
 
