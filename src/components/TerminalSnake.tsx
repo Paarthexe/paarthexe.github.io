@@ -23,6 +23,7 @@ export const TerminalSnake: React.FC<TerminalSnakeProps> = ({ onGameOver, onExit
   const [score, setScore] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
   const [speed, setSpeed] = useState(INITIAL_SPEED);
+  const [isExited, setIsExited] = useState(false);
 
   const generateFood = useCallback((currentSnake: Position[]): Position => {
     while (true) {
@@ -36,6 +37,8 @@ export const TerminalSnake: React.FC<TerminalSnakeProps> = ({ onGameOver, onExit
   }, []);
 
   useEffect(() => {
+    if (isExited) return;
+
     const handleKeys = (e: KeyboardEvent) => {
       if (isGameOver) {
         if (e.key === 'Enter' || e.key.toLowerCase() === 'r') {
@@ -50,6 +53,7 @@ export const TerminalSnake: React.FC<TerminalSnakeProps> = ({ onGameOver, onExit
           setIsGameOver(false);
           setFood({ x: 10, y: 5 });
         } else if (e.key === 'Escape' || e.key.toLowerCase() === 'q') {
+          setIsExited(true);
           onExit();
         }
         return;
@@ -75,6 +79,7 @@ export const TerminalSnake: React.FC<TerminalSnakeProps> = ({ onGameOver, onExit
           break;
         case 'escape':
         case 'q':
+          setIsExited(true);
           onExit();
           return;
         default:
@@ -89,7 +94,7 @@ export const TerminalSnake: React.FC<TerminalSnakeProps> = ({ onGameOver, onExit
 
     window.addEventListener('keydown', handleKeys);
     return () => window.removeEventListener('keydown', handleKeys);
-  }, [direction, isGameOver, onExit]);
+  }, [direction, isGameOver, onExit, isExited]);
 
   useEffect(() => {
     if (isGameOver) return;
