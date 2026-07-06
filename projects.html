@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Paarth Manchanda</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body>
+
+    <header>
+        <a class="wordmark" href="index.html">Paarth Manchanda</a>
+        <nav>
+            <a href="https://github.com/Paarthexe">GitHub</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="./PaarthManchanda.pdf">Résumé</a>
+            <a href="https://www.linkedin.com/in/paarth-manchanda-577b8b30a/">LinkedIn</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <h1>Selected Projects</h1>
+        <p class="intro">A few things I've built recently.</p>
+
+        <section class="project-list">
+
+            <article class="project">
+                <div class="project-head">
+                    <h2>Twin Terry Tao</h2>
+                    <span class="year">2026</span>
+                </div>
+                <p class="desc">Tries to reconstruct how Terence Tao actually reasons through a problem, not just what
+                    he'd say. Multi-hop retrieval chases down supporting context across steps, hybrid dense + sparse
+                    search keeps recall high on niche math terminology, and a chain-of-thought loop forces the model to
+                    show its work before committing to an answer. Runs entirely on a self-hosted quantised model.
+                </p>
+                <ul class="stack">
+                    <li>Rust</li>
+                    <li>gRPC</li>
+                    <li>Docker</li>
+                </ul>
+                <div class="links">
+                    <a class="glow" href="https://github.com/Paarthexe/twinterrytao">Repo</a>
+                    <a class="glow" href="#">Write-up</a>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-head">
+                    <h2>AI Interview</h2>
+                    <span class="year">2026</span>
+                </div>
+                <p class="desc">A mock-interview platform that actually critiques you back. Separate
+                    interviewer/interviewee sessions, a question generator that adapts on the fly, and per-answer
+                    feedback so practice runs turn into something you can improve on instead of just rehearsing.</p>
+                <ul class="stack">
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                </ul>
+                <div class="links">
+                    <a class="glow" href="https://github.com/Aksh2906/ai-interview/">Repo</a>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-head">
+                    <h2>TerrainSeg</h2>
+                    <span class="year">2026</span>
+                </div>
+                <p class="desc">A Segformer-based segmentation model tuned for offroad autonomy, where terrain looks
+                    nothing like the road scenes most segmentation models are trained on. Built to hold up across data
+                    from multiple, quite different distributions instead of overfitting to one dataset's lighting,
+                    terrain type, or camera setup.</p>
+                <ul class="stack">
+                    <li>Python</li>
+                    <li>PyTorch</li>
+                </ul>
+                <div class="links">
+                    <a class="glow" href="https://github.com/Paarthexe/multicityhackathonsegmentationtask">Repo</a>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-head">
+                    <h2>DacSaab</h2>
+                    <span class="year">2026</span>
+                </div>
+                <p class="desc">An edge-AI diagnosis app built for ASHA workers operating with patchy or no
+                    connectivity. Runs inference on-device, generates patient reports on the spot, and shares results
+                    peer-to-peer between phones so a diagnosis doesn't have to wait on a network connection.</p>
+                <ul class="stack">
+                    <li>Dart</li>
+                    <li>C++</li>
+                    <li>Swift</li>
+                </ul>
+                <div class="links">
+                    <a class="glow" href="https://github.com/TECHSCHOLAR777/DacSaab/">Repo</a>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-head">
+                    <h2>Gesture Desktop Control System</h2>
+                    <span class="year">2026</span>
+                </div>
+                <p class="desc">Turns hand gestures into desktop actions. Each gesture fires a request to Groq, which
+                    writes and runs a Python script on the spot — so instead of a fixed set of pre-programmed commands,
+                    you can teach it new gestures and rewire what each one does whenever you want.</p>
+                <ul class="stack">
+                    <li>Python</li>
+                    <li>Flask</li>
+                    <li>Groq API</li>
+                </ul>
+                <div class="links">
+                    <a class="glow" href="https://github.com/Paarthexe/gesturedesktopcontrolsystem">Repo</a>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400&family=Inter:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --accent: #b5651d;
+    --bg: #f8f7f4;
+    --hairline: #ddd;
+}
+
+body {
+    background: var(--bg);
+    color: #222;
+    font-family: Inter, sans-serif;
+}
+
+/* header */
+
+header {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wordmark {
+    font-family: "IBM Plex Serif", serif;
+    font-size: 1.1rem;
+    color: #222;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: #666;
+    text-decoration: none;
+    font-size: .9rem;
+    transition: color .2s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--accent);
+}
+
+/* main */
+
+main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1rem 6rem;
+}
+
+h1 {
+    font-family: "IBM Plex Serif", serif;
+    font-size: 2.25rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin-bottom: .75rem;
+}
+
+.intro {
+    color: #666;
+    max-width: 42ch;
+    margin-bottom: 3rem;
+}
+
+/* project list */
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.project {
+    padding: 2rem 0;
+    border-top: 1px solid var(--hairline);
+}
+
+.project:first-child {
+    border-top: 1px solid var(--hairline);
+}
+
+.project-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+.project-head h2 {
+    font-family: "IBM Plex Serif", serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.year {
+    font-size: .85rem;
+    color: #999;
+    font-style: italic;
+}
+
+.desc {
+    color: #555;
+    max-width: 58ch;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.stack {
+    display: flex;
+    gap: .6rem;
+    list-style: none;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.stack li {
+    font-size: .78rem;
+    color: #888;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    padding: .2rem .7rem;
+}
+
+.links {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.links .glow {
+    color: #222;
+    text-decoration: none;
+    font-size: .9rem;
+    transition: color .25s ease, text-shadow .25s ease;
+}
+
+.links .glow:hover,
+.links .glow:focus-visible {
+    color: var(--accent);
+    text-shadow: 0 0 6px rgba(181, 101, 29, .5), 0 0 16px rgba(181, 101, 29, .3);
+}

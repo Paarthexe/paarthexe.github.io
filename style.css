@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400&family=Inter:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f8f7f4;
+    color: #222;
+    font-family: Inter, sans-serif;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+main {
+    text-align: center;
+}
+
+.identity {
+    display: inline-block;
+    margin-bottom: 4rem;
+}
+
+h1 {
+    position: relative;
+    display: inline-block;
+    font-family: "IBM Plex Serif", serif;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    white-space: nowrap;
+}
+
+.email-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color .25s ease, text-shadow .25s ease;
+}
+
+.email-link:hover,
+.email-link:focus-visible {
+    color: #b5651d;
+    text-shadow: 0 0 6px rgba(181, 101, 29, .55), 0 0 18px rgba(181, 101, 29, .35);
+}
+
+.seg,
+.at {
+    position: relative;
+    display: inline-block;
+}
+
+p {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: #222;
+    text-decoration: none;
+}
+
+nav a:hover {
+    opacity: .6;
+}
+
+.annotation {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.annotation.top {
+    bottom: 100%;
+    flex-direction: column-reverse;
+    padding-bottom: 6px;
+}
+
+.annotation.bottom {
+    top: 100%;
+    flex-direction: column;
+    padding-top: 6px;
+}
+
+.bracket {
+    width: 100%;
+    height: 8px;
+    box-sizing: border-box;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+}
+
+.annotation.top .bracket {
+    border-top: 1px solid #999;
+}
+
+.annotation.bottom .bracket {
+    border-bottom: 1px solid #999;
+}
+
+.connector {
+    width: 1px;
+    height: 14px;
+    background: #999;
+    margin: 2px 0;
+}
+
+.tag {
+    font-size: .8rem;
+    color: #888;
+    font-style: italic;
+    letter-spacing: 0;
+    white-space: nowrap;
+    text-shadow: none;
+}
