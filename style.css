@@ -28,7 +28,7 @@ h1 {
     position: relative;
     display: inline-block;
     font-family: "IBM Plex Serif", serif;
-    font-size: 3rem;
+    font-size: clamp(0.95rem, 6vw, 3rem);
     font-weight: 400;
     letter-spacing: -1px;
     white-space: nowrap;
@@ -124,4 +124,24 @@ nav a:hover {
     letter-spacing: 0;
     white-space: nowrap;
     text-shadow: none;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 2rem 1rem;
+    }
+    .identity {
+        margin-bottom: 3rem;
+    }
+    nav {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    nav {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
